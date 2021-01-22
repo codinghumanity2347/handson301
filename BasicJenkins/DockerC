@@ -55,13 +55,22 @@ archive 'target/*.war'
 
 }
 
+
+
+stage('Deployment - PreProd') {
+
+sh 'docker-compose up -d --build'
+
+}
+
 }
 
 
 
-stage('Tomcat Deployment'){
-
- deploy adapters: [tomcat8(credentialsId: '01', path: '', url: 'http://ucplc91343dns.eastus2.cloudapp.azure.com:8080')], contextPath: 'petclinic', onFailure: false, war: 'petclinic-zidi/target/petclinic.war'
+stage('Deployment - Stage'){
+deploy adapters: [tomcat8(credentialsId: '01', path: '', url: 'http://ucplc91343dns.eastus2.cloudapp.azure.com:8080')], contextPath: 'petclinic', onFailure: false, war: 'petclinic-zidi/target/petclinic.war'
 }
 
-} 
+ 
+
+}
