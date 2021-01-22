@@ -1,0 +1,48 @@
+
+node {
+
+stage('GitCheckOut') {
+
+git branch: 'master', credentialsId: '01', url: 'https://github.com/codinghumanity2347/handson301.git'
+
+}
+
+
+
+stage('Maven Clean') {
+
+sh 'mvn clean -f petclinic-zidi/pom.xml'
+
+}
+
+
+
+stage('Maven Compile') {
+
+sh 'mvn compile -f petclinic-zidi/pom.xml'
+
+}
+
+
+
+stage('Maven test') {
+
+sh 'mvn test -f petclinic-zidi/pom.xml'
+
+}
+
+
+
+stage('Maven pkg') {
+
+sh 'mvn package -f petclinic-zidi/pom.xml'
+
+}
+
+stage('Archive Artifacts') {
+
+archive 'petclinic-zidi/target/*.war'    
+
+}
+
+}
