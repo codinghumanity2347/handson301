@@ -64,9 +64,9 @@ stage('Build Managment') {
 
 	{
 
-	"pattern": "**/*.war",
+	"pattern": "target/*.war",
 
-	"target": "petclinic.war"
+	"target": "petclinic.ear"
 
         }
 
@@ -77,7 +77,6 @@ stage('Build Managment') {
 	server.upload spec: uploadSpec
 
  }
-
 
 
 
