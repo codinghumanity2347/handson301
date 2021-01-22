@@ -1,0 +1,19 @@
+
+node {
+
+git branch: 'main', credentialsId: '01', url: 'https://github.com/codinghumanity2347/handson301"
+
+
+sh 'mvn clean -f petclinic-zidi/pom.xml'
+
+sh 'mvn compile -f petclinic-zidi/pom.xml'
+
+sh 'mvn test -f petclinic-zidi/pom.xml'
+
+sh 'mvn package -f petclinic-zidi/pom.xml'
+
+
+
+archive 'petclinic-zidi/target/*.war'    
+
+}
