@@ -22,7 +22,7 @@ try {
 
 stage('GitCheckOut') {
 
-git branch: 'terraform', credentialsId: '01', url: 'https://github.com/codinghumanity2347/handson301.git'
+git branch: 'master', credentialsId: '01', url: 'https://github.com/codinghumanity2347/handson301.git'
 
 }
 
