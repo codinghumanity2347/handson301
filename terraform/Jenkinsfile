@@ -96,7 +96,7 @@ def notify(status){
 
     emailext(
 
-    to: "kriti1996@gmail.com",
+    to: "jenkinsmail.301@gmail.com",
 
     subject: "${status} :JOB '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
 
