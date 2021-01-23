@@ -64,8 +64,8 @@ stage('Build Managment') {
 
 	{
 
-	"pattern": "**/*.war",
-	"target": "petclinic.war"
+	"pattern": "**/petclinic.war",
+	"target": "*/target/"
         }
 
 	]
